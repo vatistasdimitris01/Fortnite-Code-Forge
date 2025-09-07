@@ -1,0 +1,5 @@
+{
+  "name": "Fortnite Code Forge",
+  "description": "An AI-powered assistant to help Fortnite Creative and UEFN developers write code in Verse and C++. Simply describe what you want to build, and let the AI generate the code for you.",
+  "requestFramePermissions": []
+}
