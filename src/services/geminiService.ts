@@ -3,13 +3,12 @@ import { GoogleGenAI } from "@google/genai";
 import { GEMINI_MODEL } from '../constants';
 import { Language } from '../types';
 
-const apiKey = import.meta.env.VITE_API_KEY;
-
-if (!apiKey) {
-  throw new Error("VITE_API_KEY environment variable not set");
+// Fix: Use process.env.API_KEY as required by the coding guidelines to resolve the `import.meta.env` error.
+if (!process.env.API_KEY) {
+  throw new Error("API_KEY environment variable not set");
 }
 
-const ai = new GoogleGenAI({ apiKey: apiKey });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export async function generateFortniteCode(prompt: string, language: Language): Promise<string> {
   const fullPrompt = `
