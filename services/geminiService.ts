@@ -3,10 +3,12 @@ import { GoogleGenAI } from "@google/genai";
 import { GEMINI_MODEL } from '../constants';
 import { Language } from '../types';
 
-const apiKey = import.meta.env.VITE_API_KEY;
+// FIX: Use `process.env.API_KEY` to align with the coding guidelines.
+const apiKey = process.env.API_KEY;
 
 if (!apiKey) {
-  throw new Error("VITE_API_KEY environment variable not set");
+  // FIX: Updated the error message to reflect the correct environment variable.
+  throw new Error("API_KEY environment variable not set");
 }
 
 const ai = new GoogleGenAI({ apiKey: apiKey });
