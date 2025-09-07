@@ -37,6 +37,10 @@ export async function generateFortniteCode(prompt: string, language: Language): 
     });
 
     const text = response.text;
+
+    if (!text) {
+      return ''; // Return empty string if response is undefined or empty
+    }
     
     // Clean up the response to extract only the code from the markdown block
     const codeBlockRegex = /```(?:\w*\n)?([\s\S]*?)```/;
